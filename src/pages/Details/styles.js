@@ -35,3 +35,15 @@ export const SaveButton = styled.TouchableOpacity`
      justify-content: center;
      align-items: center;
 `;
+
+export const CancelButton = styled.TouchableOpacity`
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 30px;
+left: 30px;
+background: #F92E6A;
+border-radius: 50px;
+justify-content: center;
+align-items: center;
+`;

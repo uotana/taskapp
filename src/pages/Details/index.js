@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import firebase from '../../config/firebaseConfig';
-import { Container, DescriptionInput, LogoContainer, SaveButton, Title } from './styles';
+import { Container, DescriptionInput, LogoContainer, SaveButton, CancelButton, Title } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faSave } from '@fortawesome/free-solid-svg-icons';
 import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import Logo from '../../components/Logo';
+import { Text } from 'react-native';
+
 
 export default function Details({ navigation, route }) {
      const database = firebase.firestore();
@@ -32,6 +34,9 @@ export default function Details({ navigation, route }) {
                     onChangeText={setEditedDescription}
                     value={editedDescription}
                />
+               <CancelButton onPress={() => navigation.navigate('Task', {userId: route.params.userId})}>
+                    <Text>Cancel</Text>
+               </CancelButton>
                <SaveButton onPress={() => editTask(editedDescription, taskId)}>
                     <FontAwesomeIcon icon={faSave} size={24} color='#FFFFFF' />
                </SaveButton>
