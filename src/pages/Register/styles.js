@@ -41,3 +41,10 @@ export const CreateAccountButton = styled.TouchableOpacity`
      justify-content: center;
      align-items: center;
 `;
+
+export const Title = styled.Text`
+     margin-top: 15px;
+     font-size: 20px;
+     font-weight: bold;
+     margin-bottom: 20px;
+`;

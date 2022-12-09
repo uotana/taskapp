@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Logo from '../../components/Logo';
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
-import { Container, LoginInput, LoginButton, LoginContainer, CreateAccountButton } from './styles';
+import { Container, LoginInput, LoginButton, LoginContainer, CreateAccountButton, Title } from './styles';
 import { Text } from 'react-native';
 import firebase from '../../config/firebaseConfig';
 
@@ -33,6 +33,7 @@ export default function Register({ navigation }) {
                <StatusBar style='auto' />
                <LoginContainer>
                     <Logo />
+                    <Title style={{ color: '#F92E6A' }}>Create account</Title>
                     <LoginInput
                          placeholder='E-mail'
                          onChangeText={setEmail}
@@ -44,10 +45,10 @@ export default function Register({ navigation }) {
                     />
 
                     <CreateAccountButton onPress={register}>
-                         <Text style={{ color: '#F92E6A', fontWeight: 'bold', fontSize: 16 }}>Criar conta</Text>
+                         <Text style={{ color: '#F92E6A', fontWeight: 'bold', fontSize: 16 }}>Create account</Text>
                     </CreateAccountButton>
                     <LoginButton onPress={() => navigation.navigate('Login')}>
-                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Entrar</Text>
+                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Login</Text>
                     </LoginButton>
                </LoginContainer>
           </Container>
