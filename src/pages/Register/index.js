@@ -45,10 +45,10 @@ export default function Register({ navigation }) {
                     />
 
                     <CreateAccountButton onPress={register}>
-                         <Text style={{ color: '#F92E6A', fontWeight: 'bold', fontSize: 16 }}>Create account</Text>
+                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Create account</Text>
                     </CreateAccountButton>
                     <LoginButton onPress={() => navigation.navigate('Login')}>
-                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Login</Text>
+                         <Text style={{ color: '#F92E6A', fontWeight: 'bold', fontSize: 16 }}>Login</Text>
                     </LoginButton>
                </LoginContainer>
           </Container>

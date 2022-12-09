@@ -26,7 +26,7 @@ export const LoginInput = styled.TextInput`
 export const LoginButton = styled.TouchableOpacity`
      width: 50%;
      height: 40px;
-     background: #F92E6A;
+     border: 1px solid #F92E6A;
      border-radius: 50px;
      margin-bottom: 20px;
      justify-content: center;
@@ -36,10 +36,11 @@ export const LoginButton = styled.TouchableOpacity`
 export const CreateAccountButton = styled.TouchableOpacity`
      width: 50%;
      height: 40px;
-     border: 1px solid #F92E6A;
+     background: #F92E6A;
      border-radius: 50px;
      justify-content: center;
      align-items: center;
+     margin-bottom: 15px;
 `;
 
 export const Title = styled.Text`
