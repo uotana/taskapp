@@ -25,7 +25,15 @@ export default function Login({ navigation }) {
                });
      };
 
-     useEffect(() => { }, []);
+     useEffect(() => { 
+          firebase.auth().onAuthStateChanged(user => {
+               if (user) {
+                    navigation.navigate('Task', {
+                          userId : user.uid
+                    });
+               }
+          });
+     }, []);
 
      return (
           <Container style={{ marginTop: Constants.statusBarHeight }}>
