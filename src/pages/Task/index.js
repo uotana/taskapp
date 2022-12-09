@@ -64,21 +64,23 @@ export default function Task({ navigation, route }) {
                <LogoContainer>
                     <Logo />
                </LogoContainer>
-               {task.length == 0 ? (
+               {task.length !== 0 ? (
+                    <>
+                    <Title style={{ color: '#F92E6A' }}>All tasks</Title>
+                    <FlatList
+                         showsVerticalScrollIndicator={false}
+                         data={task}
+                         renderItem={renderItem}
+                    />
+               </>
+                    
+               ) : (
                     <AlertContainer>
                          <FontAwesomeIcon icon={faTriangleExclamation} size={40} color='#F92E6A' />
                          <NoTaskFound>No task found!</NoTaskFound>
                     </AlertContainer>
-               ) : (
-                    <>
-                         <Title style={{ color: '#F92E6A' }}>All tasks</Title>
-                         <FlatList
-                              showsVerticalScrollIndicator={false}
-                              data={task}
-                              renderItem={renderItem}
-                         />
-                    </>
                )}
+               
                <LogoutButton onPress={logout}> 
                <FontAwesomeIcon icon={faArrowRightFromBracket} size={24} color='#FFFFFF' />
                </LogoutButton>
