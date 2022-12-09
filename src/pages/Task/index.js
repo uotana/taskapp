@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList } from 'react-native';
+import { Text } from 'react-native';
 import firebase from '../../config/firebaseConfig';
-import { AddButton, AlertContainer, Container, DeleteButton, DetailsButton, LogoContainer, NoTaskFound, TaskContainer, TaskDetails, TaskTitle, Title } from './styles';
+import { AddButton, AlertContainer, Container, DeleteButton, DetailsButton, LogoContainer, LogoutButton, NoTaskFound, TaskContainer, TaskDetails, TaskTitle, Title } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCircle, faEdit, faPlus, faTrash, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { StatusBar } from 'expo-status-bar';
@@ -22,6 +23,13 @@ export default function Task({ navigation, route }) {
                setTask(list);
           });
      }, []);
+
+     function logout(){
+          firebase.auth().signOut().then(() => {
+               navigation.navigate('Login');
+          }).catch((error) => {
+             });
+     }
 
      function deleteTask(id) {
           database.collection(route.params.userId).doc(id).delete();
@@ -71,6 +79,9 @@ export default function Task({ navigation, route }) {
                          />
                     </>
                )}
+               <LogoutButton onPress={logout}> 
+                    <Text>logout</Text>
+               </LogoutButton>
                <AddButton onPress={() => navigation.navigate('NewTask', {userId : route.params.userId})}>
                     <FontAwesomeIcon icon={faPlus} size={24} color='#FFFFFF' />
                </AddButton>

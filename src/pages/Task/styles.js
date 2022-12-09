@@ -76,3 +76,15 @@ export const DeleteButton = styled.TouchableOpacity`
      align-items: center;
      justify-content: center;
 `;
+
+export const LogoutButton = styled.TouchableOpacity`
+width: 50px;
+height: 50px;
+position: absolute;
+bottom: 30px;
+left: 30px;
+background: #F92E6A;
+border-radius: 50px;
+justify-content: center;
+align-items: center;
+`;
