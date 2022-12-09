@@ -14,10 +14,10 @@ export default function Details({ navigation, route }) {
      const taskId = route.params.id;
 
      function editTask(description, id) {
-          database.collection('Tasks').doc(id).update({
-               description: description
+          database.collection(route.params.userId).doc(id).update({
+               description: description,
           });
-          navigation.navigate('Task');
+          navigation.navigate('Task', {userId : route.params.userId});
      };
 
      return (

@@ -16,7 +16,7 @@ export default function Register({ navigation }) {
           firebase.auth().createUserWithEmailAndPassword(email, password)
                .then((userCredential) => {
                     const user = userCredential.user;
-                    navigation.navigate('Login', {
+                    navigation.navigate('Task', {
                          userId: user.uid    
                     });
                })

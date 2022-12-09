@@ -7,18 +7,18 @@ import Constants from 'expo-constants';
 import Logo from '../../components/Logo';
 import { StatusBar } from 'expo-status-bar';
 
-export default function NewTask({ navigation }) {
+export default function NewTask({ navigation, route }) {
      const database = firebase.firestore();
 
      const [description, setDescription] = useState('');
      const [status, setStatus] = useState(false);
 
      function addTask() {
-          database.collection('Tasks').add({
+          database.collection(route.params.userId).add({
                description: description,
                status: status
           });
-          navigation.navigate('Task');
+          navigation.navigate('Task', {userId : route.params.userId});
      };
 
      return (
