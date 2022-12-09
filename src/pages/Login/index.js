@@ -45,16 +45,16 @@ export default function Login({ navigation }) {
                          onChangeText={setEmail}
                     />
                     <LoginInput
-                         placeholder='Senha'
+                         placeholder='Password'
                          secureTextEntry={true}
                          onChangeText={setPassword}
                     />
                     
                     <LoginButton onPress={login}>
-                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Entrar</Text>
+                         <Text style={{ color: '#FFFFFF', fontWeight: 'bold', fontSize: 16 }}>Login</Text>
                     </LoginButton>
                     <CreateAccountButton onPress={() => navigation.navigate('Register')}>
-                         <Text style={{ color: '#F92E6A', fontSize: 16 }}>Criar conta</Text>
+                         <Text style={{ color: '#F92E6A', fontSize: 16 }}>Create account</Text>
                     </CreateAccountButton>
                </LoginContainer>
           </Container>

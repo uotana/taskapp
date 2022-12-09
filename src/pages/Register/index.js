@@ -39,7 +39,7 @@ export default function Register({ navigation }) {
                          onChangeText={setEmail}
                     />
                     <LoginInput
-                         placeholder='Senha'
+                         placeholder='Password'
                          secureTextEntry={true}
                          onChangeText={setPassword}
                     />

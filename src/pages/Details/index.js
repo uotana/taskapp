@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import firebase from '../../config/firebaseConfig';
 import { Container, DescriptionInput, LogoContainer, SaveButton, CancelButton, Title } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faSave } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faXmark } from '@fortawesome/free-solid-svg-icons';
 import Constants from 'expo-constants';
 import { StatusBar } from 'expo-status-bar';
 import Logo from '../../components/Logo';
@@ -28,14 +28,14 @@ export default function Details({ navigation, route }) {
                <LogoContainer>
                     <Logo />
                </LogoContainer>
-               <Title style={{ color: '#F92E6A' }}>Editar tarefa</Title>
+               <Title style={{ color: '#F92E6A' }}>Edit task</Title>
                <DescriptionInput
-                    placeholder='Insira a edição da tarefa'
+                    placeholder='Edit task'
                     onChangeText={setEditedDescription}
                     value={editedDescription}
                />
                <CancelButton onPress={() => navigation.navigate('Task', {userId: route.params.userId})}>
-                    <Text>Cancel</Text>
+                    <FontAwesomeIcon icon={faXmark} size={24} color='#FFFFFF' />
                </CancelButton>
                <SaveButton onPress={() => editTask(editedDescription, taskId)}>
                     <FontAwesomeIcon icon={faSave} size={24} color='#FFFFFF' />

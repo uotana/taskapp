@@ -4,7 +4,7 @@ import { Text } from 'react-native';
 import firebase from '../../config/firebaseConfig';
 import { AddButton, AlertContainer, Container, DeleteButton, DetailsButton, LogoContainer, LogoutButton, NoTaskFound, TaskContainer, TaskDetails, TaskTitle, Title } from './styles';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faCircle, faEdit, faPlus, faTrash, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRightFromBracket, faCircle, faEdit, faPlus, faTrash, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
 import { StatusBar } from 'expo-status-bar';
 import Constants from 'expo-constants';
 import Logo from '../../components/Logo';
@@ -67,11 +67,11 @@ export default function Task({ navigation, route }) {
                {task.length == 0 ? (
                     <AlertContainer>
                          <FontAwesomeIcon icon={faTriangleExclamation} size={40} color='#F92E6A' />
-                         <NoTaskFound>Nenhuma tarefa encontrada!</NoTaskFound>
+                         <NoTaskFound>No task found!</NoTaskFound>
                     </AlertContainer>
                ) : (
                     <>
-                         <Title style={{ color: '#F92E6A' }}>Todas as minhas tarefas</Title>
+                         <Title style={{ color: '#F92E6A' }}>All tasks</Title>
                          <FlatList
                               showsVerticalScrollIndicator={false}
                               data={task}
@@ -80,7 +80,7 @@ export default function Task({ navigation, route }) {
                     </>
                )}
                <LogoutButton onPress={logout}> 
-                    <Text>logout</Text>
+               <FontAwesomeIcon icon={faArrowRightFromBracket} size={24} color='#FFFFFF' />
                </LogoutButton>
                <AddButton onPress={() => navigation.navigate('NewTask', {userId : route.params.userId})}>
                     <FontAwesomeIcon icon={faPlus} size={24} color='#FFFFFF' />

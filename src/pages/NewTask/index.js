@@ -1,4 +1,4 @@
-import { faSave } from '@fortawesome/free-solid-svg-icons';
+import { faSave, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import React, { useState } from 'react';
 import firebase from '../../config/firebaseConfig';
@@ -27,14 +27,14 @@ export default function NewTask({ navigation, route }) {
                <LogoContainer>
                     <Logo />
                </LogoContainer>
-               <Title style={{ color: '#F92E6A' }}>Adicionar tarefa</Title>
+               <Title style={{ color: '#F92E6A' }}>Add task</Title>
                <DescriptionInput
                     placeholder='Por exemplo, "Estudar React Native"'
                     onChangeText={setDescription}
                     value={description}
                />
                <CancelButton onPress={() => navigation.navigate('Task', {userId: route.params.userId})}>
-                    <Text>Cancel</Text>
+                    <FontAwesomeIcon icon={faXmark} size={24} color='#FFFFFF' />
                </CancelButton>
                <SaveButton onPress={() => addTask()}>
                     <FontAwesomeIcon icon={faSave} size={24} color='#FFFFFF' />
