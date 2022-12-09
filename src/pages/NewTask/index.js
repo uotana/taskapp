@@ -2,7 +2,7 @@ import { faSave } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import React, { useState } from 'react';
 import firebase from '../../config/firebaseConfig';
-import { Container, DescriptionInput, LogoContainer, SaveButton, Title } from './styles';
+import { Container, DescriptionInput, LogoContainer, SaveButton, CancelButton, Title } from './styles';
 import Constants from 'expo-constants';
 import Logo from '../../components/Logo';
 import { StatusBar } from 'expo-status-bar';
@@ -33,6 +33,9 @@ export default function NewTask({ navigation, route }) {
                     onChangeText={setDescription}
                     value={description}
                />
+               <CancelButton onPress={() => navigation.navigate('Task', {userId: route.params.userId})}>
+                    <Text>Cancel</Text>
+               </CancelButton>
                <SaveButton onPress={() => addTask()}>
                     <FontAwesomeIcon icon={faSave} size={24} color='#FFFFFF' />
                </SaveButton>
